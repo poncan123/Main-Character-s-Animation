@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://x1m3d7kd8bak"]
+
+[ext_resource type="Texture2D" uid="uid://doavetgmnf81v" path="res://Import/Platform/Mockup.png" id="1_x36us"]
+[ext_resource type="PackedScene" uid="uid://c80wc2m2a4u3w" path="res://Scenes/entities/player.tscn" id="2_o2j4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2j4w"]
+size = Vector2(169, 19.25)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x36us"]
+a = Vector2(-51, -91)
+b = Vector2(-15, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aocf5"]
+size = Vector2(93, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p66fc"]
+size = Vector2(397, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlexe"]
+size = Vector2(31, 17)
+
+[node name="Main Character" type="Node2D"]
+
+[node name="Platform" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+position = Vector2(504.375, 0.0624695)
+scale = Vector2(0.995781, 2.70969)
+texture = ExtResource("1_x36us")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(85.5, 292.625)
+shape = SubResource("RectangleShape2D_o2j4w")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(145, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(75, 9)
+shape = SubResource("SegmentShape2D_x36us")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(145, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+position = Vector2(344, -116)
+shape = SubResource("RectangleShape2D_aocf5")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(145, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2(258, 28)
+shape = SubResource("RectangleShape2D_p66fc")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(145, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+position = Vector2(72.5, -159.5)
+shape = SubResource("RectangleShape2D_mlexe")
+
+[node name="Player" parent="." instance=ExtResource("2_o2j4w")]
+position = Vector2(18, 242)
